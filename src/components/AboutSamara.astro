@@ -1,4 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import samaraPortrait from '../assets/samaraportrait.png';
+import mahjPatel from '../assets/23384883_1634570852pT2MahjPatel.webp';
+import faheema from '../assets/28739188_1655139582302Faheema.webp';
+import karina from '../assets/23384926_16345709749rFkarina2.webp';
 ---
 <section class="samara " id="about-samara">
   <div class="samara-inner">
@@ -11,7 +16,7 @@
             <span class="samara-portrait-eyebrow">Meet</span>
             <h2 class="samara-portrait-name">Samara Michael.</h2>
           </div>
-          <img src={import.meta.env.BASE_URL + "samaraportrait.png"} alt="Samara Michael" loading="lazy" class="samara-portrait-img" />
+          <Image src={samaraPortrait} alt="Samara Michael" loading="lazy" class="samara-portrait-img" />
         </div>
 
         <div class="sphere-orbit-container">
@@ -80,7 +85,7 @@
     <div class="samara-team">
       <div class="samara-member reveal-left">
         <div class="samara-member-avatar">
-          <img src={import.meta.env.BASE_URL + "23384883_1634570852pT2MahjPatel.webp"} alt="Mahj Patel" loading="lazy" />
+          <Image src={mahjPatel} alt="Mahj Patel" loading="lazy" />
         </div>
         <div class="samara-member-info">
           <p class="samara-member-name">Mahj Patel</p>
@@ -94,7 +99,7 @@
 
       <div class="samara-member reveal-left" style="transition-delay: 0.1s">
         <div class="samara-member-avatar">
-          <img src={import.meta.env.BASE_URL + "28739188_1655139582302Faheema.webp"} alt="Faheema Patel" loading="lazy" />
+          <Image src={faheema} alt="Faheema Patel" loading="lazy" />
         </div>
         <div class="samara-member-info">
           <p class="samara-member-name">Faheema Patel</p>
@@ -108,7 +113,7 @@
 
       <div class="samara-member reveal-left" style="transition-delay: 0.2s">
         <div class="samara-member-avatar">
-          <img src={import.meta.env.BASE_URL + "23384926_16345709749rFkarina2.webp"} alt="Kristine (Karina)" loading="lazy" />
+          <Image src={karina} alt="Kristine (Karina)" loading="lazy" />
         </div>
         <div class="samara-member-info">
           <p class="samara-member-name">Kristine (Karina)</p>

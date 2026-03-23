@@ -1,4 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const resultImages = import.meta.glob<{ default: ImageMetadata }>('../assets/Results/*.{png,webp}', { eager: true });
+function getResultImg(n: number): ImageMetadata {
+  const ext = n >= 15 ? 'webp' : 'png';
+  return resultImages[`../assets/Results/${n}.${ext}`]!.default;
+}
 ---
 <section class="sr" id="student-results">
   <div class="sr-inner">
@@ -12,8 +20,8 @@
     <div class="sr-masonry">
       {Array.from({length: 12}, (_, i) => i + 1).map((n, i) => (
         <div class="sr-item" style={`animation-delay: ${(i % 4) * 0.08}s`} data-sr-item>
-          <img
-            src={import.meta.env.BASE_URL + `Results/${n}.png`}
+          <Image
+            src={getResultImg(n)}
             alt={`Student result ${n}`}
             loading="lazy"
           />

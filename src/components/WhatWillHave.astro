@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import sm3 from '../assets/sm3.png';
 ---
 <section class="wwh" id="what-will-have">
   <div class="wwh-bg"></div>
@@ -40,7 +42,7 @@
   </div>
 
   <div class="wwh-image reveal-scale">
-    <img src={import.meta.env.BASE_URL + "sm3.png"} alt="Samara Michael" loading="lazy" />
+    <Image src={sm3} alt="Samara Michael" loading="lazy" />
   </div>
 </section>
 

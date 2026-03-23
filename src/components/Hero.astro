@@ -1,5 +1,7 @@
 ---
-const heroBg = import.meta.env.BASE_URL + "herobg.png";
+import { getImage } from 'astro:assets';
+import heroBgSrc from '../assets/herobg.png';
+const heroBg = await getImage({ src: heroBgSrc });
 ---
 <section class="hero" id="hero">
   <div class="hero-bg-wrap">
@@ -57,7 +59,7 @@ const heroBg = import.meta.env.BASE_URL + "herobg.png";
   </div>
 </section>
 
-<style define:vars={{ heroBg }}>
+<style define:vars={{ heroBg: heroBg.src }}>
   .hero {
     position: relative;
     min-height: 100svh;

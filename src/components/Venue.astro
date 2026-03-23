@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import s1b from '../assets/s1b.png';
+import hotelMain from '../assets/Hotel/hotel.jpg';
+import h1 from '../assets/Hotel/h1.jpg';
+import h2 from '../assets/Hotel/h2.jpg';
+import h3 from '../assets/Hotel/h3.jpg';
+import h4 from '../assets/Hotel/h4.jpg';
 ---
 <section class="venue" id="venue">
   <div class="venue-inner">
@@ -12,23 +19,23 @@
       <!-- Image gallery -->
       <div class="venue-gallery">
         <div class="venue-gallery-wrap">
-          <img src={import.meta.env.BASE_URL + "s1b.png"} alt="Samara Michael" class="venue-figure" />
+          <Image src={s1b} alt="Samara Michael" class="venue-figure" loading="lazy" />
         <div class="venue-img-main reveal-scale">
-          <img src={import.meta.env.BASE_URL + "Hotel/hotel.jpg"} alt="Prince Regent Hotel" loading="lazy" />
+          <Image src={hotelMain} alt="Prince Regent Hotel" loading="lazy" />
     
         </div>
         <div class="venue-img-grid">
           <div class="venue-img-sm reveal-scale" style="transition-delay: 0.1s">
-            <img src={import.meta.env.BASE_URL + "Hotel/h1.jpg"} alt="Hotel interior" loading="lazy" />
+            <Image src={h1} alt="Hotel interior" loading="lazy" />
           </div>
           <div class="venue-img-sm reveal-scale" style="transition-delay: 0.2s">
-            <img src={import.meta.env.BASE_URL + "Hotel/h2.jpg"} alt="Hotel grounds" loading="lazy" />
+            <Image src={h2} alt="Hotel grounds" loading="lazy" />
           </div>
           <div class="venue-img-sm reveal-scale" style="transition-delay: 0.3s">
-            <img src={import.meta.env.BASE_URL + "Hotel/h3.jpg"} alt="Hotel function room" loading="lazy" />
+            <Image src={h3} alt="Hotel function room" loading="lazy" />
           </div>
           <div class="venue-img-sm reveal-scale" style="transition-delay: 0.4s">
-            <img src={import.meta.env.BASE_URL + "Hotel/h4.jpg"} alt="Hotel exterior" loading="lazy" />
+            <Image src={h4} alt="Hotel exterior" loading="lazy" />
           </div>
         </div>
         </div>

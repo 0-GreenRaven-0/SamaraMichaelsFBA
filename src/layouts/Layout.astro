@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import logoImg from '../assets/logo.png';
+import samaraImg from '../assets/samara.png';
 
 interface Props {
   title?: string;
@@ -17,14 +19,14 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href={import.meta.env.BASE_URL + "logo.png"} />
+    <link rel="icon" type="image/png" href={logoImg.src} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={import.meta.env.BASE_URL + "samara.png"} />
+    <meta property="og:image" content={samaraImg.src} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

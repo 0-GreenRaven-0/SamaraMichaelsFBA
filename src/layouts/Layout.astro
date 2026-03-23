@@ -1,0 +1,239 @@
+---
+import '../styles/global.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "FBA Bootcamp — Build Your Halal Income with Amazon FBA",
+  description = "Join Samara Michael's live in-person FBA Bootcamp. Learn how to build a profitable Amazon FBA business as your halal source of income. Taught to 1500+ Muslims across the UK.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/samara.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.defaults({ once: true });
+
+  // Scroll reveals — IntersectionObserver adds .is-visible to trigger CSS animations.
+  // Hero handles its own reveals with a GSAP load-time stagger, so exclude #hero.
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document
+    .querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+    .forEach((el) => {
+      if (!el.closest('#hero')) revealObserver.observe(el);
+    });
+</script>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor links so sticky urgency bar (60px) doesn't cover content */
+    scroll-padding-top: 68px;
+  }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: var(--color-off-white);
+    color: var(--color-near-black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: #1A1A1A;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0e0703;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f0b840 0%, #c4822a 100%);
+    border-radius: 4px;
+    border: 2px solid #0e0703;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #f5c855 0%, #d4943a 100%);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #c4822a #0e0703;
+  }
+
+  .editorial-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(120px, 20vw, 220px);
+    font-weight: 900;
+    color: var(--color-gold);
+    opacity: 0.07;
+    line-height: 1;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.04em;
+  }
+
+  .section-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .display-headline {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .body-lora {
+    font-family: 'Lora', serif;
+    line-height: 1.75;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #E8A830;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    text-decoration: none;
+    padding: 22px 56px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #A06C00;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn-primary::before,
+  .btn-primary::after {
+    display: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #A06C00;
+  }
+
+  .btn-primary:active {
+    transform: translateY(6px);
+    box-shadow: none;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    border: 1px solid var(--color-gold);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-gold);
+    color: #1A1A1A;
+  }
+
+  .gold-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--color-gold);
+    display: block;
+  }
+
+  /* Diagonal clip dividers */
+  .clip-dark-to-light {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  }
+  .clip-light-to-dark {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  }
+
+  /* Scroll reveal base states */
+  .reveal       { opacity: 0; transform: translateY(40px); }
+  .reveal-left  { opacity: 0; transform: translateX(-40px); }
+  .reveal-right { opacity: 0; transform: translateX(40px); }
+  .reveal-scale { opacity: 0; transform: scale(0.96); }
+
+  /* Triggered by IntersectionObserver — Tailwind CSS animations */
+  .reveal.is-visible       { animation: reveal-up         0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  .reveal-left.is-visible  { animation: reveal-from-left  0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  .reveal-right.is-visible { animation: reveal-from-right 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  .reveal-scale.is-visible { animation: reveal-from-scale 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+  @media (max-width: 600px) {
+    .btn-primary {
+      display: block;
+      text-align: center;
+      padding: 18px 24px;
+    }
+  }
+</style>

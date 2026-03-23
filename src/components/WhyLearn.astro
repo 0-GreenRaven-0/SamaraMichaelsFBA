@@ -1,0 +1,123 @@
+---
+---
+<section class="why-learn" id="why-learn">
+  <div class="why-learn-inner">
+    <div class="why-header">
+      <h2 class="display-headline why-headline reveal">
+        If I've got my sums right,<br />you're here for one of<br /><em>3 reasons.</em>
+      </h2>
+    </div>
+
+    <div class="why-reasons">
+      <div class="why-reason why-reason--1 reveal">
+        <p class="body-lora why-reason-text">
+          You're after something legit. Something <strong>halal</strong>. Something you can start as a beginner and grow into a full-time income.
+        </p>
+      </div>
+
+      <div class="why-reason why-reason--2 reveal" style="transition-delay: 0.12s">
+        <p class="body-lora why-reason-text">
+          You're done swapping your time for a salary when you should be <strong>spending your time with your loved ones</strong>.
+        </p>
+      </div>
+
+      <div class="why-reason why-reason--3 reveal" style="transition-delay: 0.24s">
+        <p class="body-lora why-reason-text">
+          You want to build something that gives you the <strong>freedom to live life on your own terms</strong> and leaves something real behind for the people you love.
+        </p>
+      </div>
+    </div>
+
+    <p class="body-lora why-intro reveal">
+      Did I catch that right? Well so did everyone who graduated from our Kickstarter Academy.
+    </p>
+  </div>
+</section>
+
+<style>
+  .why-learn {
+    background: var(--color-off-white);
+    padding: 130px 0 100px;
+    overflow: hidden;
+  }
+
+  .why-learn-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    text-align: center;
+  }
+
+  .why-header {
+    margin-bottom: 80px;
+  }
+
+  .why-headline {
+    font-size: clamp(36px, 4.5vw, 64px);
+    color: var(--color-near-black);
+  }
+
+  .why-headline em {
+    color: var(--color-amazon);
+    font-style: italic;
+  }
+
+  /* ── Circles row ── */
+  .why-reasons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .why-reason {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 56px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .why-reason:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  }
+
+  .why-reason--1 { background: #e07c12; }
+  .why-reason--2 { background: #c45e05; }
+  .why-reason--3 { background: #8f3c02; }
+
+  .why-reason-text {
+    font-size: 18px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .why-reason-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .why-intro {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 900px) {
+    .why-learn { padding: 72px 0 64px; }
+    .why-learn-inner { padding: 0 24px; }
+    .why-header { margin-bottom: 48px; }
+  }
+
+  @media (max-width: 640px) {
+    .why-reasons { flex-direction: column; align-items: center; gap: 24px; }
+  }
+</style>

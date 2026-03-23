@@ -1,0 +1,316 @@
+---
+const sessions = [
+  {
+    label: "Before We Start",
+    num: null,
+    color: "#7C6AF7",
+    body: "The moment you book, a confirmation lands in your inbox with every detail you need — how to prepare, what time to arrive and how to make the most of this face-to-face coaching.",
+  },
+  {
+    label: "Starting",
+    num: "01",
+    color: "#E8A830",
+    body: "The first session covers three areas most courses completely ignore: Setting-Up, Keeping Your Account Safe and Developing CEO Skills. After this, you'll take full ownership of your business and know exactly how to protect yourself from ever falling out with Amazon.",
+  },
+  {
+    label: "Sourcing",
+    num: "02",
+    color: "#E05C5C",
+    body: "Peek over our shoulders as we hunt for high-demand products LIVE, following our sourcing formulas and practiced strategies — so you know exactly what to avoid and never risk losing a penny. You'll have full permission to pinch all the ideas and items we find and resell them for profit.",
+  },
+  {
+    label: "Selling",
+    num: "03",
+    color: "#3BAD7A",
+    body: "You'll learn our 'Shallow & Wide' formula taught to 1500+ students in our high-ticket mentoring academy, which guides you to create your own product suite to sell multiple units every hour, leverage even the smallest budget, re-price like a pro and send off multiple shipments with ease.",
+  },
+  {
+    label: "Scaling",
+    num: "04",
+    color: "#2A9DD4",
+    body: "Once you know how to start, source and sell, there's one final piece of the jigsaw left. In this session we reveal our proven industry shortcut to grow your business, save you time and double your output — building a repeatable system that generates enough cash to pay for your training fee many times over.",
+  },
+  {
+    label: "Q&A",
+    num: "05",
+    color: "#E0855C",
+    body: "After four intensive sessions, we know your head will be buzzing with lots of questions. We'll host a casual 'Open House' style Q&A with Samara and the team to tackle on-topic questions and ensure you get the clarity and confidence you need.",
+  },
+  {
+    label: "Wrap-Up",
+    num: "06",
+    color: "#C45CA8",
+    body: "By close of play, you'll be motivated, inspired and itching to go and make some cash! We'll create your 'Must Do Next' action-plan and make sure you're crystal clear on how to get your first sale, then walk you through your 90 days of support so you stay on track delivering the results you deserve.",
+  },
+  {
+    label: "Post Bootcamp",
+    num: null,
+    color: "#4A9E8E",
+    body: "Once you're safely back home, expect to be nurtured and hand-held through the self-implementation stages. You'll get lifetime access to our digital course, 90 days in our private support group with 24/7 personalised help, and access to our twice-weekly LIVE group coaching calls so you always have expert support when you need it.",
+  },
+];
+---
+
+<section class="wl" id="what-learn">
+  <div class="wl-inner">
+    <div class="wl-header">
+      <h2 class="display-headline wl-headline reveal">
+        What Will You Learn<br /><em>During the Bootcamp?</em>
+      </h2>
+    </div>
+
+    <div class="wl-timeline" id="wl-timeline">
+      <!-- Scroll-driven line: track + fill -->
+      <div class="wl-line-track">
+        <div class="wl-line-fill" id="wl-line-fill"></div>
+      </div>
+
+      {sessions.map((s) => (
+        <div class="wl-item" data-wl-item>
+          <div class="wl-dot" style={`background: ${s.color};`}>
+            {s.num
+              ? <span class="wl-dot-num">{s.num}</span>
+              : <span class="wl-dot-mark"></span>
+            }
+          </div>
+          <div class="wl-item-body">
+            <p class="wl-item-label" style={`color: ${s.color};`}>{s.num ? `Session ${s.num} — ${s.label}` : s.label}</p>
+            <div class="wl-text-wrap">
+              <p class="wl-item-text">{s.body}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="wl-cta reveal">
+      <p class="wl-cta-line">Let's set you on the path to your financial freedom!</p>
+      <a href="#offer" class="btn-primary">Enroll Me Into The Bootcamp!</a>
+      <p class="wl-cta-urgency">Doors close March 1st — Seats are Limited</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wl {
+    background: var(--color-off-white);
+    padding: 130px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wl-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+  }
+
+  .wl-num {
+    top: -40px;
+    right: 40px;
+    color: rgba(26, 26, 26, 0.07);
+  }
+
+  .wl-header {
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  .wl-headline {
+    font-size: clamp(32px, 4.5vw, 62px);
+    color: var(--color-near-black);
+    line-height: 1.1;
+  }
+
+  .wl-headline em {
+    color: var(--color-amazon);
+    font-style: italic;
+  }
+
+  /* Timeline */
+  .wl-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  /* Scrolling line — track (faint) + fill (gold, scrubbed) */
+  .wl-line-track {
+    position: absolute;
+    left: 17px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: rgba(212, 165, 116, 0.2);
+    z-index: 0;
+  }
+
+  .wl-line-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--color-gold);
+    transform-origin: top;
+    transform: scaleY(0);
+    will-change: transform;
+  }
+
+  /* Each row */
+  .wl-item {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.07);
+    position: relative;
+  }
+
+  .wl-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Dot */
+  .wl-dot {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 2px;
+  }
+
+  .wl-dot-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wl-dot-mark {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    display: block;
+  }
+
+  /* Content */
+  .wl-item-body {
+    padding-top: 6px;
+    flex: 1;
+  }
+
+  .wl-item-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  /* Clip mask for text reveal */
+  .wl-text-wrap {
+    overflow: hidden;
+  }
+
+  .wl-item-text {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.75;
+    /* JS sets initial translateY(-100%) — CSS fallback for no-JS */
+  }
+
+  /* CTA */
+  .wl-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .wl-cta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--color-near-black);
+    opacity: 0.7;
+  }
+
+  .wl-cta-urgency {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E03030;
+    opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    .wl { padding: 72px 0 64px; }
+    .wl-inner { padding: 0 24px; }
+    .wl-header { margin-bottom: 40px; }
+    .wl-item { gap: 20px; padding: 24px 0; }
+    .wl-dot { width: 30px; height: 30px; }
+    .wl-line-track { left: 14px; }
+    .wl-item-text { font-size: 15px; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const timelineEl = document.getElementById('wl-timeline') as HTMLElement;
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-wl-item]'));
+
+  // Hide all texts initially (JS-only so no-JS users see text normally)
+  items.forEach((item) => {
+    const text = item.querySelector<HTMLElement>('.wl-item-text');
+    if (text) gsap.set(text, { y: '-105%' });
+  });
+
+  // Calculate each dot's center Y as a fraction of the timeline height.
+  // This is the fill progress at which that dot is reached.
+  const thresholds = items.map((item) => {
+    const dot = item.querySelector<HTMLElement>('.wl-dot')!;
+    const dotCenter = item.offsetTop + dot.offsetTop + dot.offsetHeight / 2;
+    return dotCenter / timelineEl.offsetHeight;
+  });
+
+  const revealed = new Set<number>();
+
+  gsap.to('#wl-line-fill', {
+    scaleY: 1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#wl-timeline',
+      start: 'top 65%',
+      end: 'bottom 55%',
+      scrub: true,
+      onUpdate(self) {
+        items.forEach((item, i) => {
+          if (revealed.has(i)) return;
+          if (self.progress >= thresholds[i]) {
+            revealed.add(i);
+            const text = item.querySelector<HTMLElement>('.wl-item-text');
+            if (text) gsap.to(text, { y: '0%', duration: 0.7, ease: 'power3.out' });
+          }
+        });
+      },
+    },
+  });
+</script>

@@ -1,0 +1,295 @@
+---
+---
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="FBA Bootcamp" class="footer-logo" loading="lazy" />
+        <p class="footer-tagline">
+          The UK's Premier Halal<br />Amazon FBA Bootcamp.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-label">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="#about-fba">About FBA</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#what-learn">What You'll Learn</a></li>
+            <li><a href="#venue">The Venue</a></li>
+            <li><a href="#about-samara">About Samara</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">The Bootcamp</p>
+          <ul class="footer-links">
+            <li><a href="#who-is-it-for">Who Is It For?</a></li>
+            <li><a href="#bonus">Bonus</a></li>
+            <li><a href="#offer">Reserve Your Seat</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Contact</p>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@fbabootcamp.co.uk">hello@fbabootcamp.co.uk</a></li>
+            <li><a href="#offer" class="footer-cta-link">Reserve My Seat →</a></li>
+          </ul>
+          <div class="footer-event-info">
+            <p class="footer-event-date">1st – 2nd March 2025</p>
+            <p class="footer-event-location">London, United Kingdom</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2025 FBA Bootcamp. All rights reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span class="footer-sep">·</span>
+        <a href="#">Terms & Conditions</a>
+        <span class="footer-sep">·</span>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p>
+        Disclaimer: Results mentioned on this page are not typical. Individual results will vary based on effort, experience, and market conditions. FBA Bootcamp does not guarantee any specific income or business outcome. Amazon FBA involves financial risk and requires consistent effort and investment. Nothing on this page constitutes financial or investment advice.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0F0905;
+    padding: 80px 0 0;
+    position: relative;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-amazon), var(--color-gold));
+    opacity: 0.6;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.08);
+  }
+
+  /* Brand */
+  .footer-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--color-beige);
+    opacity: 0.4;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-beige);
+    opacity: 0.4;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .footer-social-link:hover {
+    border-color: var(--color-gold);
+    opacity: 0.9;
+    color: var(--color-gold);
+  }
+
+  /* Columns */
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .footer-col-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    opacity: 0.6;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-beige);
+    opacity: 0.5;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    opacity: 0.9;
+  }
+
+  .footer-cta-link {
+    color: var(--color-gold) !important;
+    opacity: 0.8 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+  }
+
+  .footer-event-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 165, 116, 0.08);
+  }
+
+  .footer-event-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-gold);
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  .footer-event-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-beige);
+    opacity: 0.35;
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--color-beige);
+    opacity: 0.3;
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-legal a {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--color-beige);
+    opacity: 0.3;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-legal a:hover {
+    opacity: 0.7;
+  }
+
+  .footer-sep {
+    color: var(--color-beige);
+    opacity: 0.15;
+    font-size: 12px;
+  }
+
+  /* Disclaimer */
+  .footer-disclaimer {
+    padding: 24px 0 40px;
+    border-top: 1px solid rgba(212, 165, 116, 0.05);
+  }
+
+  .footer-disclaimer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: var(--color-beige);
+    opacity: 0.2;
+  }
+
+  @media (max-width: 900px) {
+    .footer-top { grid-template-columns: 1fr; gap: 48px; }
+    .footer-cols { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { padding: 0 24px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 500px) {
+    .footer-cols { grid-template-columns: 1fr; }
+  }
+</style>

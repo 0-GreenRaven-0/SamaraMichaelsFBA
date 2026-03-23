@@ -1,0 +1,372 @@
+---
+interface Video {
+  src: string;
+  name: string;
+  quote?: string;
+  stars?: number;
+}
+interface Props {
+  sectionNum: string;
+  heading?: string;
+
+  videos: Video[];
+  dark?: boolean;
+}
+const {
+  sectionNum,
+  heading = "Hear It From Those Who <em>Showed Up.</em>",
+
+  videos,
+  dark = true,
+} = Astro.props;
+
+const bgClass = dark ? 'vt-dark' : 'vt-light';
+---
+
+<section class={`vt-section ${bgClass}`} id={`vt-${sectionNum}`}>
+  <!-- Vine anchor slots — drop SVG here later -->
+  <div class="vt-vines vt-vines--tl" aria-hidden="true"></div>
+  <div class="vt-vines vt-vines--br" aria-hidden="true"></div>
+
+  <div class="vt-inner">
+    <div class="vt-header reveal">
+      <h2 class="display-headline vt-headline" set:html={heading} />
+    </div>
+
+    <div class="vt-rows">
+      {videos.map((v, i) => {
+        const stars   = v.stars ?? 5;
+        const quote   = v.quote ?? 'Placeholder testimonial quote. This student had an incredible experience and achieved amazing results after attending the bootcamp.';
+        const flip    = i % 2 !== 0;
+        return (
+          <div class={`vt-row reveal ${flip ? 'vt-row--flip' : ''}`} style={`transition-delay: ${i * 0.1}s`}>
+
+            {/* ── Portrait (framed video) ── */}
+            <div class="vt-reel-wrap">
+              <div class="vt-portrait-frame">
+                <div class="vt-card" data-index={i}>
+                  <div class="vt-card-inner">
+                    <video
+                      class="vt-video"
+                      src={v.src}
+                      preload="metadata"
+                      playsinline
+                      loop
+                    />
+                    <div class="vt-overlay" data-overlay>
+                      <button class="vt-play" aria-label={`Play ${v.name}'s testimonial`}>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+                          <path d="M9.5 8.5L16 12L9.5 15.5V8.5Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Content side ── */}
+            <div class="vt-content">
+              <div class="vt-stars">{'★'.repeat(stars)}</div>
+              <div class="vt-big-quote" aria-hidden="true">&quot;</div>
+              <p class="vt-quote">{quote}</p>
+              <div class="vt-person">
+                <p class="vt-person-name">{v.name}</p>
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Section shell ── */
+  .vt-section {
+    padding: 120px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Warm golden gradient — applied to both variants */
+  .vt-dark,
+  .vt-light {
+    background: linear-gradient(160deg, #fdf4e3 0%, #e8c870 50%, #f5e4b8 100%);
+  }
+
+  /* Vine slots */
+  .vt-vines {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .vt-vines--tl { top: 0; left: 0; }
+  .vt-vines--br { bottom: 0; right: 0; }
+
+  .vt-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vt-num { top: -40px; right: 40px; color: rgba(26, 26, 26, 0.08); }
+
+  .vt-tag { color: var(--color-near-black); opacity: 0.5; }
+
+  .gold-rule { background: rgba(26, 26, 26, 0.2); }
+
+  .vt-headline {
+    font-size: clamp(28px, 3.5vw, 52px);
+    max-width: 600px;
+    color: var(--color-near-black);
+  }
+
+  /* Italic word inside headings e.g. <em>students</em> */
+  .vt-headline em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+
+  .vt-header { margin-bottom: 72px; }
+
+  /* ── Rows ── */
+  .vt-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .vt-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    align-items: stretch;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(180, 130, 60, 0.12);
+  }
+
+  .vt-row--flip {
+    grid-template-columns: 1fr 280px;
+  }
+  .vt-row--flip .vt-reel-wrap { order: 2; }
+  .vt-row--flip .vt-content   { order: 1; }
+
+  /* ── Portrait reel ── */
+  .vt-reel-wrap {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .vt-portrait-frame {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    height: 100%;
+  }
+
+  .vt-card {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .vt-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #111;
+  }
+
+  .vt-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .vt-card:hover .vt-video { transform: scale(1.03); }
+
+  .vt-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%);
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .vt-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .vt-play {
+    width: 56px;
+    height: 56px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vt-play:hover          { transform: scale(1.12); background: rgba(255,255,255,0.28); }
+  .vt-play svg            { width: 100%; height: 100%; }
+
+  /* ── Content side ── */
+  .vt-content {
+    padding: 64px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 4px solid #d4943a;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Faint large quote watermark behind everything */
+  .vt-content::before {
+    content: '\201C';
+    position: absolute;
+    top: -20px;
+    right: 32px;
+    font-family: Georgia, serif;
+    font-size: 320px;
+    line-height: 1;
+    color: rgba(212, 165, 116, 0.12);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .vt-stars {
+    font-size: 48px;
+    color: #1A1A1A;
+    letter-spacing: 4px;
+    margin-bottom: 32px;
+  }
+
+  /* Small visible opening quote above the text */
+  .vt-big-quote {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    line-height: 1;
+    color: #d4943a;
+    margin-bottom: 16px;
+    user-select: none;
+    opacity: 0.7;
+  }
+
+  .vt-quote {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 48px;
+    font-style: italic;
+    color: #1a1a1a;
+  }
+
+  /* ── Person ── */
+  .vt-person {
+    padding-top: 24px;
+    border-top: 1px solid rgba(212,165,116,0.2);
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .vt-person-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #1A1A1A;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .vt-section { padding: 80px 0 72px; }
+    .vt-inner { padding: 0 24px; }
+    .vt-header { margin-bottom: 48px; }
+
+    .vt-row,
+    .vt-row--flip {
+      grid-template-columns: 1fr;
+      box-shadow: 0 4px 24px rgba(180,130,60,0.1);
+    }
+
+    .vt-reel-wrap {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .vt-portrait-frame { height: auto; }
+
+    .vt-row--flip .vt-reel-wrap { order: 0; }
+    .vt-row--flip .vt-content   { order: 0; }
+
+    .vt-content {
+      padding: 32px 24px;
+      border-left: none;
+      border-top: 1px solid rgba(212,165,116,0.18);
+    }
+
+    .vt-stars { font-size: 32px; letter-spacing: 2px; margin-bottom: 20px; }
+    .vt-big-quote { font-size: 40px; }
+    .vt-quote { font-size: 15px; max-width: 100%; margin-bottom: 32px; }
+    .vt-rows { gap: 40px; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.vt-card').forEach((card) => {
+    const video   = card.querySelector<HTMLVideoElement>('.vt-video');
+    const overlay = card.querySelector<HTMLElement>('.vt-overlay');
+    if (!video || !overlay) return;
+
+    card.addEventListener('click', () => {
+      if (video.paused) {
+        document.querySelectorAll<HTMLVideoElement>('.vt-video').forEach(v => {
+          if (v !== video && !v.paused) {
+            v.pause();
+            const ov = v.closest('.vt-card')?.querySelector<HTMLElement>('.vt-overlay');
+            if (ov) ov.classList.remove('hidden');
+          }
+        });
+        video.play();
+        overlay.classList.add('hidden');
+      } else {
+        video.pause();
+        overlay.classList.remove('hidden');
+      }
+    });
+
+    video.addEventListener('ended', () => {
+      overlay.classList.remove('hidden');
+    });
+  });
+</script>

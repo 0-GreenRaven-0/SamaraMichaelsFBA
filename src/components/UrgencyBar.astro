@@ -1,0 +1,292 @@
+---
+---
+<div id="urgency-bar" class="urgency-bar">
+  <div class="urgency-shimmer" aria-hidden="true"></div>
+
+  <div class="urgency-inner">
+
+    <!-- Left badge -->
+    <div class="urgency-badge">
+      <span class="urgency-pulse" aria-hidden="true"></span>
+      <span class="urgency-badge-text">Limited Offer</span>
+    </div>
+
+    <!-- Message -->
+    <div class="urgency-message">
+      <p class="urgency-headline">
+        Reserve your seat now to get <strong>25% off</strong> of our Business Networking Event on
+        <span class="urgency-highlight">· Saturday 2nd March</span> — Great Opportunities that'll open many doors for you!
+      </p>
+      <p class="urgency-sub">Doors close March 1st — Seats are limited</p>
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown" class="countdown">
+      <div class="countdown-unit">
+        <span id="cd-days" class="countdown-num">00</span>
+        <em class="countdown-label">Days</em>
+      </div>
+      <span class="countdown-colon" aria-hidden="true">:</span>
+      <div class="countdown-unit">
+        <span id="cd-hours" class="countdown-num">00</span>
+        <em class="countdown-label">Hours</em>
+      </div>
+      <span class="countdown-colon" aria-hidden="true">:</span>
+      <div class="countdown-unit">
+        <span id="cd-mins" class="countdown-num">00</span>
+        <em class="countdown-label">Mins</em>
+      </div>
+      <span class="countdown-colon" aria-hidden="true">:</span>
+      <div class="countdown-unit">
+        <span id="cd-secs" class="countdown-num">00</span>
+        <em class="countdown-label">Secs</em>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="#offer" class="urgency-cta">
+      Grab Your Seat
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+<style>
+  .urgency-bar {
+    position: relative;
+    z-index: 100;
+    background: #0e0703;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.18);
+    overflow: hidden;
+  }
+
+  /* Shimmer sweep */
+  .urgency-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(212, 165, 116, 0.06) 50%,
+      transparent 100%
+    );
+    animation: shimmer 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50%       { transform: translateX(100%);  }
+  }
+
+  /* Top gold accent line */
+  .urgency-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4943a 30%, #f0b840 50%, #d4943a 70%, transparent);
+    opacity: 0.6;
+  }
+
+  .urgency-inner {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: 72px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Badge ── */
+  .urgency-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.25);
+    padding: 5px 12px 5px 10px;
+  }
+
+  .urgency-pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    display: block;
+    flex-shrink: 0;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.55); }
+    50%       { box-shadow: 0 0 0 5px rgba(255, 77, 77, 0);  }
+  }
+
+  .urgency-badge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ff6b6b;
+    white-space: nowrap;
+  }
+
+  /* ── Message ── */
+  .urgency-message {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .urgency-headline {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+  }
+
+  .urgency-headline strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .urgency-highlight {
+    color: #f0b840;
+    font-weight: 600;
+  }
+
+  .urgency-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 2px;
+  }
+
+  /* ── Countdown ── */
+  .countdown {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(212, 165, 116, 0.07);
+    border: 1px solid rgba(212, 165, 116, 0.18);
+    padding: 6px 10px 5px;
+    min-width: 46px;
+  }
+
+  .countdown-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0b840;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 7px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    font-style: normal;
+    margin-top: 3px;
+  }
+
+  .countdown-colon {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(212, 165, 116, 0.35);
+    line-height: 1;
+    margin-bottom: 10px;
+    align-self: center;
+    user-select: none;
+  }
+
+  /* ── CTA ── */
+  .urgency-cta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0e0703;
+    background: linear-gradient(135deg, #f0b840 0%, #d4943a 100%);
+    padding: 10px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .urgency-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .urgency-inner   { gap: 16px; padding: 0 24px; }
+    .urgency-sub     { display: none; }
+    .urgency-badge   { display: none; }
+  }
+
+  @media (max-width: 720px) {
+    .urgency-inner   { height: auto; padding: 12px 20px; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .urgency-message { text-align: center; flex: 0 0 100%; }
+    .urgency-headline { white-space: normal; font-size: 13px; text-align: center; }
+    .urgency-cta     { padding: 9px 18px; }
+  }
+
+  @media (max-width: 480px) {
+    .urgency-cta { display: none; }
+    .countdown-unit { min-width: 36px; padding: 5px 7px 4px; }
+    .countdown-num { font-size: 18px; }
+  }
+</style>
+
+<script>
+  const DEADLINE = new Date('2026-04-01T23:59:59').getTime();
+
+  function tick() {
+    const diff = DEADLINE - Date.now();
+    const pad = (n: number) => String(n).padStart(2, '0');
+
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+        (document.getElementById(id) as HTMLElement).textContent = '00';
+      });
+      return;
+    }
+
+    (document.getElementById('cd-days') as HTMLElement).textContent  = pad(Math.floor(diff / 86400000));
+    (document.getElementById('cd-hours') as HTMLElement).textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    (document.getElementById('cd-mins') as HTMLElement).textContent  = pad(Math.floor((diff % 3600000) / 60000));
+    (document.getElementById('cd-secs') as HTMLElement).textContent  = pad(Math.floor((diff % 60000) / 1000));
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>

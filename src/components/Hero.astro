@@ -1,0 +1,305 @@
+---
+---
+<section class="hero" id="hero">
+  <div class="hero-bg-wrap">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="section-tag hero-tag reveal">Join our Live in Person Training as we teach you...</p>
+      <div class="gold-rule reveal" style="margin: 16px 0 24px;"></div>
+
+      <h1 class="display-headline hero-headline" id="hero-headline">
+        <span class="hero-line">How to Build a</span>
+        <span class="hero-line hero-line--italic">Profitable FBA Business</span>
+        <span class="hero-line">as your Halal</span>
+        <span class="hero-line hero-line--accent">Source of Income</span>
+        <span class="hero-line hero-line--sub">& Achieve Freedom to Spend</span>
+        <span class="hero-line hero-line--sub">Time with Family.</span>
+      </h1>
+
+      <div class="hero-proof reveal">
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">+1,500</span>
+          <span class="hero-proof-label">Muslims Trained in the UK</span>
+        </div>
+        <div class="hero-proof-divider"></div>
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">6</span>
+          <span class="hero-proof-label">Years Teaching FBA</span>
+        </div>
+        <div class="hero-proof-divider"></div>
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">£5M+</span>
+          <span class="hero-proof-label">In Student Sales Generated</span>
+        </div>
+      </div>
+
+      <p class="hero-subtext reveal">
+        Framework designed to complete Newbies with no prior experience!
+      </p>
+
+      <div class="hero-ctas reveal">
+        <a href="#offer" class="btn-primary">Reserve My Seat Now</a>
+        <span class="hero-seats"><i class="fa-solid fa-bolt"></i> Doors close March 1st — Seats are limited</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" id="hero-scroll-hint">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-mouse">
+        <span class="hero-scroll-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero-bg-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/herobg.png');
+    background-size: cover;
+    background-position: center top;
+    will-change: transform;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(26, 26, 26, 0.88) 0%,
+      rgba(26, 26, 26, 0.70) 50%,
+      rgba(26, 26, 26, 0.55) 100%
+    );
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 100px 60px 80px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-tag {
+    color: var(--color-gold);
+  }
+
+  .hero-headline {
+    font-size: clamp(40px, 6.5vw, 90px);
+    color: #fff;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-line {
+    display: block;
+    overflow: hidden;
+    line-height: 1.12;
+  }
+
+  .hero-line--italic {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+
+  .hero-line--accent {
+    color: var(--color-amazon);
+  }
+
+  .hero-line--sub {
+    font-size: 0.58em;
+    font-weight: 400;
+    color: var(--color-beige);
+    margin-top: 4px;
+  }
+
+  .hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-proof-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-proof-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+  }
+
+  .hero-proof-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-beige);
+    opacity: 0.8;
+  }
+
+  .hero-proof-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(212, 165, 116, 0.3);
+  }
+
+  .hero-subtext {
+    font-size: 16px;
+    color: var(--color-beige);
+    margin-bottom: 40px;
+    opacity: 0.85;
+    font-style: italic;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-seats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--color-beige);
+    opacity: 0.7;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+  }
+
+  .hero-scroll-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(212, 165, 116, 0.6);
+  }
+
+  .hero-scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border-radius: 11px;
+    border: 1.5px solid rgba(212, 165, 116, 0.55);
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .hero-scroll-dot {
+    width: 3px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--color-gold);
+    animation: scroll-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-dot {
+    0%        { transform: translateY(0);   opacity: 1; }
+    60%       { transform: translateY(12px); opacity: 0; }
+    61%       { transform: translateY(0);   opacity: 0; }
+    100%      { transform: translateY(0);   opacity: 1; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner { padding: 80px 24px 60px; }
+    .hero-proof-divider { display: none; }
+    .hero-proof { gap: 20px; }
+    .hero-scroll-hint { left: 24px; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .hero-seats { font-size: 10px; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero background parallax
+  gsap.to('#hero-bg', {
+    yPercent: 25,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  });
+
+  // Stagger reveal of hero lines
+  const lines = document.querySelectorAll('.hero-line');
+  lines.forEach((line) => {
+    const inner = document.createElement('span');
+    inner.style.display = 'block';
+    inner.innerHTML = (line as HTMLElement).innerHTML;
+    line.innerHTML = '';
+    line.appendChild(inner);
+    gsap.from(inner, {
+      yPercent: 110,
+      duration: 1,
+      ease: 'power3.out',
+      delay: 0.1,
+    });
+  });
+
+  // Stagger reveal for .reveal elements in hero
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+    gsap.to(el, { opacity: 1, y: 0, duration: 0.9, delay: 0.6 + i * 0.15, ease: 'power2.out' });
+  });
+
+  // Scroll hint fade in
+  gsap.to('#hero-scroll-hint', { opacity: 1, duration: 1, delay: 2 });
+
+  // Hide scroll hint on scroll
+  ScrollTrigger.create({
+    trigger: '#hero',
+    start: 'top+=100 top',
+    onEnter: () => gsap.to('#hero-scroll-hint', { opacity: 0, duration: 0.4 }),
+  });
+</script>

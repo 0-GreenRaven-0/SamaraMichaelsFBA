@@ -1,0 +1,375 @@
+---
+---
+<section class="venue" id="venue">
+  <div class="venue-inner">
+    <div class="venue-header">
+      <h2 class="display-headline venue-headline reveal">
+        Behold<br /><em>Our Venue.</em>
+      </h2>
+    </div>
+
+    <div class="venue-layout">
+      <!-- Image gallery -->
+      <div class="venue-gallery">
+        <div class="venue-gallery-wrap">
+          <img src="/s1b.png" alt="Samara Michael" class="venue-figure" />
+        <div class="venue-img-main reveal-scale">
+          <img src="/Hotel/hotel.jpg" alt="Prince Regent Hotel" loading="lazy" />
+    
+        </div>
+        <div class="venue-img-grid">
+          <div class="venue-img-sm reveal-scale" style="transition-delay: 0.1s">
+            <img src="/Hotel/h1.jpg" alt="Hotel interior" loading="lazy" />
+          </div>
+          <div class="venue-img-sm reveal-scale" style="transition-delay: 0.2s">
+            <img src="/Hotel/h2.jpg" alt="Hotel grounds" loading="lazy" />
+          </div>
+          <div class="venue-img-sm reveal-scale" style="transition-delay: 0.3s">
+            <img src="/Hotel/h3.jpg" alt="Hotel function room" loading="lazy" />
+          </div>
+          <div class="venue-img-sm reveal-scale" style="transition-delay: 0.4s">
+            <img src="/Hotel/h4.jpg" alt="Hotel exterior" loading="lazy" />
+          </div>
+        </div>
+        </div>
+      </div>
+      
+
+      <!-- Copy -->
+      <div class="venue-copy">
+        <div class="venue-address reveal">
+          <p class="venue-address-text">
+            London Chigwell<br />
+            Prince Regent Hotel<br />
+            Manor Rd, Woodford Green,<br />
+            Chigwell IG8 8AE
+          </p>
+          <a
+            href="https://maps.google.com/?q=Prince+Regent+Hotel+Chigwell+IG8+8AE"
+            target="_blank"
+            rel="noopener"
+            class="venue-map-link"
+          >
+            Open in Maps →
+          </a>
+        </div>
+
+        <p class="body-lora venue-para reveal">
+          A bootcamp that will reshape your financial life and set you on the path to freedom deserves
+          to take place somewhere equally special — and this converted Georgian mansion fits the bill
+          perfectly, with its picturesque scenery and elegant atmosphere.
+        </p>
+
+        <p class="body-lora venue-para reveal">
+          The perfect setting for a comfortable, luxurious bootcamp experience — with stress-free
+          parking right on arrival.
+        </p>
+
+        <div class="venue-highlight reveal">
+          <span class="venue-highlight-icon"><i class="fa-solid fa-handshake"></i></span>
+          <div>
+            <p class="venue-highlight-title">Business Networking Event</p>
+            <p class="body-lora">
+              Our Business Networking Event takes place on <strong>Saturday 2nd March</strong> at the same
+              venue — where you'll be introduced to the kind of people who could change the trajectory
+              of your business overnight.
+            </p>
+          </div>
+        </div>
+
+        <div class="venue-perks reveal">
+          <div class="venue-perk">
+            <span class="venue-perk-icon"><i class="fa-solid fa-square-parking"></i></span>
+            <span>Free Parking On-Site</span>
+          </div>
+          <div class="venue-perk">
+            <span class="venue-perk-icon"><i class="fa-solid fa-utensils"></i></span>
+            <span>Lunch & Refreshments Included</span>
+          </div>
+          <div class="venue-perk">
+            <span class="venue-perk-icon"><i class="fa-solid fa-hotel"></i></span>
+            <span>Accommodation Available</span>
+          </div>
+          <div class="venue-perk">
+            <span class="venue-perk-icon"><i class="fa-solid fa-receipt"></i></span>
+            <span>Business Expense — Keep Your Receipt!</span>
+          </div>
+        </div>
+
+        <p class="venue-note reveal">
+          <strong>Note:</strong> Book yourself a room from plenty of accommodation options so you
+          don't miss out! Don't forget to keep your receipt — this is a business expense, so let your
+          new Amazon FBA business foot the bill.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .venue {
+    background: #1A1A1A;
+    padding: 130px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .venue::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    opacity: 0.2;
+  }
+
+  .venue-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+  }
+
+  .venue-header {
+    max-width: 520px;
+    margin-bottom: 72px;
+  }
+
+  .venue-headline {
+    font-size: clamp(36px, 5vw, 72px);
+    color: #fff;
+    line-height: 1.05;
+  }
+
+  .venue-headline em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  /* Layout */
+  .venue-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  /* Gallery */
+  .venue-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .venue-gallery-wrap {
+    position: relative;
+  }
+
+  .venue-figure {
+    position: absolute;
+    bottom: 0;
+    left: -80px;
+    width: 16rem;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .venue-img-main {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+
+  .venue-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .venue-img-main:hover img {
+    transform: scale(1.03);
+  }
+
+  .venue-img-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(26,26,26,0.75) 0%, transparent 100%);
+    padding: 28px 20px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    opacity: 0.9;
+  }
+
+  .venue-img-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+  }
+
+  .venue-img-sm {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .venue-img-sm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .venue-img-sm:hover img {
+    transform: scale(1.06);
+  }
+
+  /* Copy column */
+  .venue-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .venue-address {
+    border-left: 3px solid rgba(255,255,255,0.15);
+    padding: 20px 28px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .venue-address-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .venue-address-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .venue-map-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+  }
+
+  .venue-map-link:hover { opacity: 0.75; }
+
+  .venue-para {
+    color: #fff;
+    font-size: 16px;
+    opacity: 0.65;
+    line-height: 1.75;
+  }
+
+  .venue-highlight {
+    display: flex;
+    gap: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 3px solid var(--color-gold);
+    padding: 24px 28px;
+    align-items: flex-start;
+  }
+
+  .venue-highlight-icon {
+    font-size: 24px;
+    color: var(--color-gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .venue-highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+  }
+
+  .venue-highlight .body-lora {
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.65;
+    line-height: 1.65;
+  }
+
+  .venue-highlight .body-lora strong {
+    color: #fff;
+    opacity: 1;
+  }
+
+  .venue-perks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+
+  .venue-perk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.65;
+  }
+
+  .venue-perk-icon {
+    font-size: 16px;
+  }
+
+  .venue-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.4;
+    font-style: italic;
+    line-height: 1.65;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+  }
+
+  .venue-note strong {
+    color: #fff;
+    font-style: normal;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1000px) {
+    .venue { padding: 72px 0 64px; }
+    .venue-layout { grid-template-columns: 1fr; gap: 48px; }
+    .venue-inner { padding: 0 24px; }
+    .venue-header { margin-bottom: 48px; }
+    .venue-figure { left: 0; width: 11rem; }
+  }
+
+  @media (max-width: 600px) {
+    .venue-perks { grid-template-columns: 1fr; }
+    .venue-img-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

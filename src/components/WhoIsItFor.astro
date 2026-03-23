@@ -1,0 +1,164 @@
+---
+const items = [
+  { label: 'UK-Based folks',            desc: 'because our teaching revolves around sourcing products from UK suppliers only.' },
+  { label: 'Financial freedom seekers', desc: 'tired of selling their time living pay cheque to pay cheque and want something better for the long term.' },
+  { label: 'Halal income',              desc: 'those who want to generate money that is halal through a legit and proven way.' },
+  { label: 'Fed up with gurus',         desc: 'those tired of course sellers robbing them of both their money and time on mediocre knowledge.' },
+  { label: 'Stressed mums',             desc: "mothers who could really use this opportunity to spend time with their children at home without worrying about income." },
+  { label: 'Action takers',             desc: "we're giving you the tools to succeed, the rest depends on how much effort and commitment you're willing to put into your business — and even if you fail at first, we'll make sure you don't." },
+  { label: 'Complete newbies',          desc: 'this bootcamp was built with a curriculum for people with no experience to succeed, regardless of their technical skills and prior education.' },
+];
+---
+
+<section class="wiif" id="who-is-it-for">
+  <div class="wiif-inner">
+
+    <div class="wiif-header">
+      <h2 class="display-headline wiif-headline reveal">
+        Who Is This<br /><em>Bootcamp For?</em>
+      </h2>
+    </div>
+
+    <div class="wiif-intro-block">
+      <p class="wiif-intro reveal">
+        If you live in the UK, tired of selling your time in a 9 to 5, surviving from pay check to
+        pay check, you've been searching for a halal way to make income from your own surroundings
+        so you can quit your stressful job that's been robbing you the time you could have spent
+        with your loved ones or used to explore and live life on your own time.
+      </p>
+      <p class="wiif-intro wiif-intro--em reveal">
+        Then this Bootcamp is hosted specifically for you!
+      </p>
+    </div>
+
+    <p class="wiif-this-is reveal">This is for</p>
+
+    <ul class="wiif-list">
+      {items.map((item, i) => (
+        <li class="wiif-item reveal" style={`transition-delay: ${i * 0.06}s`}>
+          <i class="fa-solid fa-check wiif-check"></i>
+          <span><strong>{item.label}</strong> — {item.desc}</span>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+</section>
+
+<style>
+  .wiif {
+    background: var(--color-near-black);
+    padding: 130px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wiif::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,165,116,0.25), transparent);
+  }
+
+  .wiif-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+  }
+
+  .wiif-header {
+    margin-bottom: 48px;
+  }
+
+  .wiif-headline {
+    font-size: clamp(34px, 4.5vw, 64px);
+    color: #fff;
+    line-height: 1.08;
+  }
+
+  .wiif-headline em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  /* ── Intro ── */
+  .wiif-intro-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .wiif-intro {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .wiif-intro--em {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .wiif-this-is {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 20px;
+  }
+
+  /* ── List ── */
+  .wiif-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wiif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+  }
+
+  .wiif-item strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .wiif-check {
+    color: var(--color-gold);
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 700px) {
+    .wiif { padding: 72px 0 64px; }
+    .wiif-inner { padding: 0 24px; }
+    .wiif-intro { font-size: 16px; }
+    .wiif-intro--em { font-size: 17px; }
+    .wiif-item { font-size: 15px; }
+    .wiif-header { margin-bottom: 40px; }
+    .wiif-intro-block { gap: 16px; margin-bottom: 36px; padding-bottom: 36px; }
+  }
+</style>

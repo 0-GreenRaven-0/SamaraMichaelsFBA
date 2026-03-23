@@ -1,0 +1,205 @@
+---
+---
+<section class="wcu" id="why-choose-us">
+  <div class="wcu-inner">
+    <div class="wcu-header">
+      <h2 class="display-headline wcu-headline reveal">
+        With So Many Trainers Out There…<br /><em>Why Choose Us?</em>
+      </h2>
+    </div>
+
+    <div class="wcu-layout">
+      <!-- Left: image -->
+      <div class="wcu-image reveal-scale">
+        <img src="/sm2.png" alt="Samara Michael" loading="lazy" />
+      </div>
+
+      <!-- Right: copy + badges + cta -->
+      <div class="wcu-right">
+  
+        <p class="body-lora wcu-para reveal">
+          We have an online Academy called <strong>the Amazon Kickstarter Academy</strong> where we've been teaching Amazon FBA for the past <strong>6 years</strong>.
+          It's where we teach people how to correctly run an FBA business while abiding by Amazon's policies,
+          how to source from UK-based suppliers only, and the secret formulas to finding the best-selling products.
+        </p>
+
+        <p class="body-lora wcu-para reveal">
+          Over <strong>1,500 graduates</strong> have achieved their life of financial freedom — quitting their stressful
+          9-to-5s, spending more time with their families, and building a halal income stream for themselves
+          and their loved ones.
+        </p>
+
+        <p class="body-lora wcu-para reveal">
+         While this academy was a huge powerhouse in churning 6-Figures FBA Business owners, it was simpley a premium experience which not many folks could afford, that's why we created this bootcamp with budget-crafted in mind to give everyone a shot at building a legit profitable business without risking their budget on courses.
+        </p>
+
+    
+
+      </div>
+    </div>
+
+    <div class="wcu-cta reveal">
+      <a href="#offer" class="btn-primary">I Want In Now!</a>
+      <p class="wcu-urgency">Doors close March 1st — Seats are limited</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wcu {
+    background: var(--color-near-black);
+    padding: 130px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wcu::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    opacity: 0.25;
+  }
+
+  .wcu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+  }
+
+  .wcu-header {
+    max-width: 780px;
+    margin-bottom: 72px;
+  }
+
+  .wcu-headline {
+    font-size: clamp(30px, 4vw, 56px);
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .wcu-headline em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  .wcu-layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* Left image */
+  .wcu-image {
+    position: sticky;
+    top: 80px;
+  }
+
+  .wcu-image img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Right copy */
+  .wcu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wcu-sub {
+    font-size: 11px !important;
+  }
+
+  .wcu-para {
+    color: var(--color-beige);
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.78;
+  }
+
+  .wcu-para strong {
+    color: #fff;
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  /* Badges */
+  .wcu-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    margin-top: 8px;
+  }
+
+  .wcu-badge {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px 28px;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    transition: background 0.25s ease;
+  }
+
+  .wcu-badge:last-child {
+    border-bottom: none;
+  }
+
+  .wcu-badge:hover {
+    background: rgba(212, 165, 116, 0.05);
+  }
+
+  .wcu-badge-icon {
+    font-size: 22px;
+    color: var(--color-gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .wcu-badge-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+
+  .wcu-badge-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-beige);
+    opacity: 0.6;
+    line-height: 1.65;
+  }
+
+  .wcu-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-top: 64px;
+  }
+
+  .wcu-urgency {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E03030;
+    opacity: 1;
+  }
+
+  @media (max-width: 1000px) {
+    .wcu { padding: 72px 0 64px; }
+    .wcu-layout { grid-template-columns: 1fr; gap: 48px; }
+    .wcu-image { position: static; max-width: 340px; margin: 0 auto; }
+    .wcu-inner { padding: 0 24px; }
+    .wcu-header { margin-bottom: 48px; }
+  }
+</style>

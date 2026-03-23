@@ -5,21 +5,21 @@ const testimonials = [
     tag: 'Graduated Student',
     quote: "Working with Samara to get my business going was the best thing I could of done. Samara's training is easy to understand and she shares a lot of off-the-record info regarding selling that helped me stay motivated. I now totally see the value in getting help from a pro.",
     stars: 5,
-    img: '/13103154_1600440698560idil.webp',
+    img: '13103154_1600440698560idil.webp',
   },
   {
     name: 'Mohammed',
     tag: 'Graduated Student',
     quote: "Samara really does want students to succeed and will share very on point data and tips. Rarely do you find somebody so prepared to share business data to this level.  She has got integrity and values which were important characteristics when choosing a mentor.",
     stars: 5,
-    img: '/13097178_1600419333271mohammed.webp',
+    img: '13097178_1600419333271mohammed.webp',
   },
   {
     name: 'Yasmin',
     tag: 'Graduated Student',
     quote: "I had previously dabbled in selling weight loss supplements but it didn't have a consistent income. I worked with Samara and she helped me with literally everything. I'm making 10-20 sales on average a day and my business is growing quickly.",
     stars: 5,
-    img: '/13097297_1600419752086mahwish.webp',
+    img: '13097297_1600419752086mahwish.webp',
   },
 ];
 ---
@@ -31,7 +31,7 @@ const testimonials = [
         <div class="wt-card wt-card-stagger">
           <p class="wt-quote">"{t.quote}"</p>
           <div class="wt-author">
-            <img src={t.img} alt={t.name} class="wt-avatar" loading="lazy" />
+            <img src={import.meta.env.BASE_URL + t.img} alt={t.name} class="wt-avatar" loading="lazy" />
             <div>
               <p class="wt-name">{t.name}</p>
               <p class="wt-meta">{t.tag}</p>

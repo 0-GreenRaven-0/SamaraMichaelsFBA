@@ -48,7 +48,7 @@ const bgClass = dark ? 'vt-dark' : 'vt-light';
                   <div class="vt-card-inner">
                     <video
                       class="vt-video"
-                      src={v.src}
+                      src={import.meta.env.BASE_URL + v.src}
                       preload="metadata"
                       playsinline
                       loop

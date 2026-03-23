@@ -13,7 +13,7 @@
       {Array.from({length: 12}, (_, i) => i + 1).map((n, i) => (
         <div class="sr-item" style={`animation-delay: ${(i % 4) * 0.08}s`} data-sr-item>
           <img
-            src={`/Results/${n}.png`}
+            src={import.meta.env.BASE_URL + `Results/${n}.png`}
             alt={`Student result ${n}`}
             loading="lazy"
           />

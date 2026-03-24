@@ -88,21 +88,6 @@ import sm3 from '../assets/sm3.png';
     padding-bottom: 110px;
   }
 
-  .wwh-tag {
-    color: var(--color-gold);
-  }
-
-  .wwh-arabic {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 72px);
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-near-black);
-    line-height: 1;
-    margin-bottom: 36px;
-    opacity: 0.15;
-  }
-
   .wwh-body {
     display: flex;
     flex-direction: column;
@@ -141,42 +126,6 @@ import sm3 from '../assets/sm3.png';
   .wwh-purpose-text em {
     color: var(--color-amazon);
     font-style: italic;
-  }
-
-  .wwh-pillars {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 44px;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-
-  .wwh-pillar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 0;
-  }
-
-  .wwh-pillar-icon {
-    font-size: 20px;
-  }
-
-  .wwh-pillar-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-near-black);
-    opacity: 0.6;
-  }
-
-  .wwh-pillar-sep {
-    width: 1px;
-    height: 24px;
-    background: rgba(26, 26, 26, 0.15);
-    margin: 0 24px;
   }
 
   .wwh-cta {
@@ -223,26 +172,6 @@ import sm3 from '../assets/sm3.png';
     .wwh::after { display: none; }
     .wwh-image { display: none; }
     .wwh-content { max-width: 100%; padding-bottom: 0; }
-    .wwh-pillar-sep { display: none; }
-    .wwh-pillars { gap: 8px; }
-    .wwh-pillar { padding: 10px 0; }
   }
 </style>
 
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Animate arabic text opacity
-  const arabic = document.querySelector('.wwh-arabic');
-  if (arabic) {
-    gsap.fromTo(arabic,
-      { opacity: 0 },
-      {
-        opacity: 0.15, duration: 1.4, ease: 'power1.out',
-        scrollTrigger: { trigger: arabic, start: 'top 88%' }
-      }
-    );
-  }
-</script>

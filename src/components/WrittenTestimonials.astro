@@ -121,7 +121,11 @@ const testimonials = [
   @media (max-width: 1000px) {
     .wt { padding: 72px 0 64px; }
     .wt-inner { padding: 0 24px; }
-    .wt-grid { grid-template-columns: 1fr; gap: 48px; }
+    .wt-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  }
+
+  @media (max-width: 600px) {
+    .wt-grid { grid-template-columns: 1fr; gap: 32px; }
   }
 </style>
 

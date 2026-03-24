@@ -317,10 +317,16 @@ import pic2 from '../assets/pic2.webp';
     100% { transform: translateY(0);    opacity: 1; }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    .hero-inner { padding: 48px 40px 60px; }
+    .hero-visual { width: 440px; }
+    .hero-headline { font-size: clamp(38px, 5.5vw, 56px); }
+  }
+
+  @media (max-width: 800px) {
     .hero-main-row { flex-direction: column; }
-    .hero-visual { width: 100%; max-width: 320px; align-self: center; }
-    .hero-headline { text-align: center; }
+    .hero-visual { width: 100%; max-width: 340px; align-self: center; }
+    .hero-headline { text-align: center; font-size: clamp(32px, 8vw, 44px); }
     .hero-inner { padding: 80px 24px 60px; }
     .hero-proof-divider { display: none; }
     .hero-proof { gap: 20px; justify-content: center; }

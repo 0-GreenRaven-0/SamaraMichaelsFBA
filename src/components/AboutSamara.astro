@@ -484,9 +484,14 @@ import karina from '../assets/23384926_16345709749rFkarina2.webp';
     .samara-portrait-card { max-width: 100%; padding: 32px 24px 0; }
     .sphere-orbit-container { transform: translate(-50%, -50%) scale(0.65); }
     .samara-founder { margin-bottom: 60px; }
-    .samara-team { grid-template-columns: 1fr; gap: 16px; }
+    .samara-team { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .samara-member { padding: 28px 20px 28px; }
     .samara-inner { padding: 0 24px; }
     .samara-header { margin-bottom: 48px; }
+  }
+
+  @media (max-width: 600px) {
+    .samara-team { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 480px) {
